@@ -16,7 +16,7 @@
             {
                 id: 3,
                 name: "Oz",
-                date: "22/8/1993"
+                date: "22/08/1993"
             },
             {
                 id: 4,
@@ -97,8 +97,59 @@
 
         const factory = {};
 
+        // Get all people:
+
         factory.getPeople = () => {
             return people;
+        }
+
+        // Get people by season:
+
+        factory.getBySeason = (season) => {
+
+            let startMonth = null;
+            let endMonth = null;
+
+            if (season === 'spring') {
+                startMonth = 3;
+                endMonth = 6;
+            }
+
+            else if (season === 'summer') {
+                startMonth = 6;
+                endMonth = 9;
+            }
+
+            else if (season === 'fall') {
+                startMonth = 9;
+                endMonth = 12;
+            }
+
+            else if (season === 'winter') {
+                startMonth = 12;
+                endMonth = 3;
+            }
+
+            const seasonPeople = [];
+
+            people.forEach(person=> {
+
+                let month = Number(person.date.slice(3, 5));
+
+                if((month > 2 && month < 12) && (month >= startMonth && month < endMonth)) {
+                    console.log(person.id);
+                    seasonPeople.push(person);
+                }
+
+                else {
+                    if((month === 1 || month === 2 || month === 12) && season === 'winter') {
+                        console.log(person.id);
+                        seasonPeople.push(person);
+                    }
+                }
+            });
+
+            return seasonPeople;
         }
 
         factory.getSpringBorn = () => {
@@ -156,6 +207,25 @@
 
             return winterPeople;
         };
+
+        // Get people by their zodiac
+
+        factory.getByZodiac = (people, startMonth, startDay, endMonth, endDay) => {
+
+            const zodiac = [];
+
+            people.forEach(person=> {
+
+                const day = Number(person.date.slice(0, 2));
+                const month = Number(person.date.slice(3, 5));
+
+                if((month === startMonth && day >= startDay) || (month === endMonth && day <= endDay)) zodiac.push(person);
+            });
+
+            return zodiac;
+        }
+
+        
 
     }
     
