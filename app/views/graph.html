@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/normalize.css">
-</head>
-<body>
+    <html>
 
-</body>
-</html>
+        <head>
+            <title>Analysis</title>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        </head>
+        <body>
+
+            <div class="graph-page-container">
+
+                {{1+1}}
+                <br/>
+                <br/>
+                <br/>
+
+                <!-- <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Birth Date</th>
+                        <th>Added</th>
+                    </tr>
+                    <tr ng-repeat="ar in arias">
+                        <td>{{ ar.name }}</td>
+                        <td>{{ ar.date }}</td>
+                        <td>{{ ar.id }}</td>
+                    </tr>
+                </table> -->
+
+                <table>
+                    <tr ng-repeat="num in allZodiacs track by $index">
+                        <td>{{ num }}</td>
+                    </tr>
+                </table>
+
+                <canvas id="myChart" style="width:100%;max-width:80%"></canvas>
+                
+
+            </div>
+
+        </body>
+    </html>

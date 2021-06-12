@@ -105,7 +105,7 @@
                 resolve(people);
                 reject([]);
             });
-            
+
             return prom;
         }
 
@@ -155,7 +155,12 @@
                 }
             });
 
-            return seasonPeople;
+            const prom = new Promise((resolve, reject)=> {
+                resolve(seasonPeople);
+                reject([]);
+            });
+            
+            return prom;
         }
 
         // Get people by their zodiac
@@ -172,7 +177,12 @@
                 if((month === startMonth && day >= startDay) || (month === endMonth && day <= endDay)) zodiac.push(person);
             });
 
-            return zodiac;
+            const prom = new Promise((resolve, reject)=> {
+                resolve(zodiac);
+                reject([]);
+            });
+            
+            return prom;
         } 
 
         return factory;

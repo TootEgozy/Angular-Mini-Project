@@ -5,7 +5,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.people-table-container {
+.people-table-container,
+.graph-page-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
