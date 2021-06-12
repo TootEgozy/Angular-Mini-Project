@@ -4,10 +4,10 @@
 
         </head>
         <body>
-
-            <h2></h2>
-            <!-- Filter: <input type="text" ng-model="customerFilter.name" /> -->
-            <br /><br />
+            
+            <div class="people-table-container">
+                <h1>Our users</h1>
+            Filter: <input type="text" ng-model="search"/>
             <table>
                 <tr>
                     <!-- <th ng-click="doSort('name')">Name</th>
@@ -15,15 +15,21 @@
                     <th ng-click="doSort('orderTotal')">Order Total</th>
                     <th ng-click="doSort('joined')">Joined</th>
                     <th>&nbsp;</th> -->
+                    <th>Name</th>
+                    <th>Birth Date</th>
+                    <th>Added</th>
                 </tr>
-                <tr ng-repeat="pers in people">
+                <tr ng-repeat="pers in people | filter:search">
                     <td>{{ pers.name }}</td>
                     <td>{{ pers.date }}</td>
                     <td>{{ pers.id }}</td>
                 </tr>
             </table>
-            <br />
-            <br /><br />
-            <footer>footer </footer>
+            
+                <a href="app/views/graph.html">Watch The Analysis</a>
+                <a href="app/views/addingForm.html">Add Your Details</a>
+                
+            </div>
+    
         </body>
     </html>

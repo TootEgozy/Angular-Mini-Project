@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.people-table-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: lightgoldenrodyellow;
+    padding-top: 3rem;
+}
+
+.people-table-container h1 {
+    font-family: cursive;
+    color: darkslateblue;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.people-table-container input {
+    padding: 0.2rem;
+    border: 1px solid darkslateblue;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.people-table-container table {
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    min-width: 30%;
+}
+
+.people-table-container th {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-indent: -60%;
+}
+
+.people-table-container td {
+    border-top: 1px solid deeppink;
+    border-bottom: 1px solid deeppink;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.people-table-container a {
+     margin: 0.5rem;
+     font-size: 1.1rem;
+}
+
