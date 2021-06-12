@@ -1,12 +1,12 @@
 (function() {
     
-    var app = angular.module('ZodiAnalist', ['ngRoute']);
+    var app = angular.module('ZodiAnalyst', ['ngRoute']);
     
     app.config(function($routeProvider) {
         $routeProvider
             .when('/', {
                 controller: 'peopleTableController',
-                templateUrl: 'app/views/peopleTable'
+                templateUrl: 'app/views/peopleTable.html'
             })
             .when('/graph', {
                 controller: 'graphController',

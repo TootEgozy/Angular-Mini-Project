@@ -100,7 +100,13 @@
         // Get all people:
 
         factory.getPeople = () => {
-            return people;
+
+            const prom = new Promise((resolve, reject)=> {
+                resolve(people);
+                reject([]);
+            });
+            
+            return prom;
         }
 
         // Get people by season:
@@ -152,62 +158,6 @@
             return seasonPeople;
         }
 
-        factory.getSpringBorn = () => {
-
-            const springPeople = [];
-
-            people.forEach(person=> {
-
-                let month = Number(person.date.slice(3, 5));
-
-                if(month >= 3 && month < 6) springPeople.push(person);
-            });
-
-            return springPeople;
-        };
-
-        factory.getSummerBorn = () => {
-
-            const summerPeople = [];
-
-            people.forEach(person=> {
-
-                let month = Number(person.date.slice(3, 5));
-
-                if(month >= 6 && month < 9) summerPeople.push(person);
-            });
-
-            return summerPeople;
-        };
-
-        factory.getFallBorn = () => {
-
-            const fallPeople = [];
-
-            people.forEach(person=> {
-
-                let month = Number(person.date.slice(3, 5));
-
-                if(month >= 9 && month < 12) fallPeople.push(person);
-            });
-
-            return fallPeople;
-        };
-        
-        factory.getWinterBorn = () => {
-
-            const winterPeople = [];
-
-            people.forEach(person=> {
-
-                let month = Number(person.date.slice(3, 5));
-
-                if(month >= 12 && month < 3) winterPeople.push(person);
-            });
-
-            return winterPeople;
-        };
-
         // Get people by their zodiac
 
         factory.getByZodiac = (people, startMonth, startDay, endMonth, endDay) => {
@@ -223,30 +173,13 @@
             });
 
             return zodiac;
-        }
+        } 
 
-        
+        return factory;
 
     }
+
+    angular.module('ZodiAnalyst').factory('peopleFactory', 
+    peopleFactory);
     
 })();
-
-// var customersFactory = function($http) {
-    
-//     var factory = {};
-    
-//     factory.getCustomers = function() {
-//         return $http.get('/customers');
-//     };
-    
-//     factory.getCustomer = function(customerId) {
-//         return $http.get('/customers/' + customerId);
-//     };
-    
-//     return factory;
-// };
-
-// customersFactory.$inject = ['$http'];
-    
-// angular.module('customersApp').factory('customersFactory', 
-//                                        customersFactory);

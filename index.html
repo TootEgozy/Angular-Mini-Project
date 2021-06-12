@@ -1,9 +1,9 @@
 <!doctype html>
-<html ng-app="ZodiAnalist">
+<html ng-app="ZodiAnalyst">
     
     <head>
 
-        <title>ZodiAnalist</title>
+        <title>ZodiAnalyst</title>
         <link rel="stylesheet" href="styles/app.css">
 
     </head>
@@ -11,19 +11,18 @@
     <body>
         <span>{{1+1}}</span>
 
+        <ng-view></ng-view>
+
         <script src="/Mini-Project/scripts/angular.js"></script>
         <script src="/Mini-Project/scripts/angular-route.js"></script>
 
         <script src="app/app.js"></script>
 
-        <script src="people.json"></script>
-
         <script src="app/controllers/addingFormController.js"></script>
-
         <script src="app/controllers/graphController.js"></script>
         <script src="app/controllers/peopleTableController.js"></script>
 
-        <script src="app/services/peopleService.js"></script>
+        <script src='app/factories/peopleFactory.js'></script>
 
     </body>
 </html>
