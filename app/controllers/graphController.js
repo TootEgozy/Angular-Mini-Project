@@ -1,5 +1,5 @@
 (function() {
-    
+    // a controller for the graph
     let graphController = function ($scope, $log, peopleFactory) {
         $scope.people = [];
 
